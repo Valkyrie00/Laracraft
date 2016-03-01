@@ -9,3 +9,8 @@
         ""Valkyrie\\Laracraft\\": "packages/valkyrie/laracraft/src/"
     }
 ```
+
+## Node
+```bash
+    npm install socket.io ioredis --save
+```
