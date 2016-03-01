@@ -1,0 +1,12 @@
+<?php
+namespace App\Http\Controllers;
+
+class {{ControllerName}}Controller extends Controller
+{
+
+    public function index()
+    {
+        echo "Hi! I'm {{ControllerName}}";
+    }
+
+}

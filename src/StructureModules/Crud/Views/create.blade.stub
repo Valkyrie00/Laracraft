@@ -1,0 +1,21 @@
+@extends('{{cControllerName}}.layouts.master')
+
+@section('content')
+
+@if(Session::has('flash_message'))
+    <div class="alert alert-success">
+        {{ Session::get('flash_message') }}
+    </div>
+@endif
+
+<h1>New</h1>
+
+<form action="{{ URL::to('{{cControllerName}}') }}" method="POST">
+
+{{inputCreate}}
+
+<button type="submit" class="btn btn-success">Create</button>
+
+</form>
+
+@stop

@@ -1,0 +1,7 @@
+suites:
+    laracraft_suite:
+        namespace: Valkyrie\Laracraft
+        psr4_prefix: Valkyrie\Laracraft
+        src_path: src
+        spec_path: test
+        spec_prefix: Laracraft

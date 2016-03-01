@@ -1,0 +1,5 @@
+ 
+//*******************
+// {{ControllerName}}
+//*******************
+Route::resource('/{{cControllerName}}' , '{{ControllerName}}Controller');

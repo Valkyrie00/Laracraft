@@ -1,0 +1,65 @@
+<?php
+namespace App\Http\Controllers;
+
+use App\{{ModelName}};
+use Illuminate\Http\Request;
+use Session;
+
+class {{ControllerName}}Controller extends Controller
+{
+
+    public function index()
+    {
+        $ydata = {{ModelName}}::get();
+
+        return view('{{cControllerName}}.index')->withYdata($ydata);
+    }
+
+    public function create()
+    {
+        return view('{{cControllerName}}.create');
+    }
+
+    public function store(Request $request)
+    {
+        $input = $request->all();
+        {{ModelName}}::create($input);
+        Session::flash('flash_message', 'Successfully added!');
+
+        return redirect()->route('{{cControllerName}}.index');
+    }
+
+    public function show($id)
+    {
+        $ydata = {{ModelName}}::findOrFail($id);
+
+        return view('{{cControllerName}}.show')->withYdata($ydata);
+    }
+
+    public function edit($id)
+    {
+        $ydata = {{ModelName}}::findOrFail($id);
+
+        return view('{{cControllerName}}.edit')->withYdata($ydata);
+    }
+
+    public function update($id, Request $request)
+    {
+        $ydata = {{ModelName}}::findOrFail($id);
+        $input = $request->all();
+        $ydata->fill($input)->save();
+        Session::flash('flash_message', 'Successfully updated!');
+
+        return redirect()->route('{{cControllerName}}.index');
+    }
+
+    public function destroy($id, Request $request)
+    {
+        $ydata = {{ModelName}}::findOrFail($id);
+        $ydata->delete();
+        Session::flash('flash_message', 'Successfully deleted!');
+
+        return redirect()->route('{{cControllerName}}.index');
+    }
+
+}

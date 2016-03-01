@@ -1,0 +1,23 @@
+@extends('{{cControllerName}}.layouts.master')
+
+@section('content')
+
+@if(Session::has('flash_message'))
+    <div class="alert alert-success">
+        {{ Session::get('flash_message') }}
+    </div>
+@endif
+
+<h1>Edit - {{ $ydata->name }} </h1>
+<p class="lead">Edit. <a href="{{ route('{{cControllerName}}.index') }}">Go to index.</a></p>
+
+    <form action="{{ URL::to('{{cControllerName}}', $ydata->id) }}" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+
+    {{inputEdit}}
+
+    <button type="submit" class="btn btn-success">Update</button>
+
+    </form>
+
+@stop

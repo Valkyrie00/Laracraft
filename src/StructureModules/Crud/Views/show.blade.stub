@@ -1,0 +1,17 @@
+@extends('{{cControllerName}}.layouts.master')
+
+@section('content')
+
+{{inputIndex}}
+
+<a href="{{ route('{{cControllerName}}.index') }}" class="btn btn-info">Back</a>
+<a href="{{ route('{{cControllerName}}.edit', $ydata->id) }}" class="btn btn-primary">Edit</a>
+
+<div class="pull-right">
+    <form action="{{ URL::to('{{cControllerName}}', $ydata->id) }}" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+
+@stop
