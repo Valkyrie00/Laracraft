@@ -14,3 +14,8 @@
 ```bash
     npm install socket.io ioredis --save
 ```
+
+## Require
+```bash
+    composer require predis/predis
+```
