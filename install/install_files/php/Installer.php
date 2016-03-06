@@ -265,7 +265,7 @@ class Installer
                 if (!$result)
                     throw new Exception('Unable to open application archive file');
 
-                $this->recurse_copy($this->baseDirectory.'/laravel-master', $this->baseDirectory);
+                $this->recurse_copy($this->baseDirectory.'/laravel-master', $this->baseDirectory.'/../../');
 
                 $this->moveHtaccess(null, 'october');
                 $this->moveHtaccess('installer', null);
@@ -304,7 +304,7 @@ class Installer
     //
     private function initComposerDetails()
     {
-          $cmd = 'php composer.phar install';
+          $cmd = 'cd ..; cd ..; composer install';
           $output = shell_exec($cmd);
     }
 
