@@ -36,6 +36,6 @@
         ],
         "post-package-install:": [
             "php -r \"copy('src/Install/index.php', '../../install.php');\""
-        ],
+        ]
     }
 }
