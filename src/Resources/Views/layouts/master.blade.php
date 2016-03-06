@@ -34,12 +34,12 @@
           </ul>
           <h3 class="sub-header">Tools</h3>
           <ul class="nav nav-sidebar">
-            <li class="{{ Route::current()->getName() == 'laracraft-mmc' ? 'active' : '' }}"><a href="{{ URL::to('laracraft/mmc') }}">Creative</a></li>
+            <li class="{{ Route::current()->getName() == 'laracraft-creative' ? 'active' : '' }}"><a href="{{ URL::to('laracraft/creative') }}">Creative</a></li>
             <li class="{{ Route::current()->getName() == 'laracraft-composer' ? 'active' : '' }}"><a href="{{ URL::to('laracraft/composer') }}">Composer</a></li>
-            <li><a href="#">Create Your Package</a></li>
+            <li class="{{ Route::current()->getName() == 'laracraft-package' ? 'active' : '' }}"><a href="{{ URL::to('laracraft/package') }}">Package</a></li>
             <li class="{{ Route::current()->getName() == 'laracraft-backups' ? 'active' : '' }}"><a href="{{ URL::to('laracraft/backups') }}">Backups</a></li>
             <li><a class="{{ Route::current()->getName() == 'laracraft-database' ? 'active' : '' }}" href="{{ URL::to('laracraft/database') }}">Database</a></li>
-            <li><a href="#">Git</a></li>
+            <!-- <li><a href="#">Git</a></li> -->
           </ul>
           <h3 class="sub-header">Assets</h3>
           <ul class="nav nav-sidebar">
@@ -59,7 +59,7 @@
     <div class="col-md-10 col-lg-10 col-md-offset-2 valkyrie-console" id="valkyrie-console-content" vis="small">
           <div class="valkyrie-console-action">
             <span> Console Log </span>
-            <a href="#" id="valkyrie-expand">Toggle</a>
+            <a href="#" id="valkyrie-expand" class="valkyrie-console-toggler">Toggle</a>
           </div>
           <div class="valkyrie-console-log-container">
           <div id="valkyrie-console-log" class="valkyrie-console-log">
@@ -80,14 +80,8 @@
     <!-- Valkyrie Console JS -->
     <script type="text/javascript">
       $( "#valkyrie-console-content #valkyrie-expand" ).on( "click", function() {
-            $content =  $( "#valkyrie-console-content");
-            if($content.attr('vis')=='big'){
-                $content.animate({height:'-=600'})
-                $content.attr('vis','small');
-            }else{
-              $content.animate({height:'+=600'})
-              $content.attr('vis','big');
-            }
+            $Vconsole =  $( "#valkyrie-console-content");
+            $Vconsole.toggleClass('full-height');
       });
     </script>
 
@@ -96,8 +90,7 @@
 
     <script type="text/javascript">
 
-        var socket = io('http://192.168.17.17:3000');
-
+        var socket = io('http://{{ $_SERVER["HTTP_HOST"] }}:3000');
         new Vue({
             el: '#valkyrie-console-log-data',
 

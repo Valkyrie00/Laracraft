@@ -1,0 +1,27 @@
+{
+    "name": "{{vendor}}/{{name}}",
+    "description": " --- ",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dev",
+            "email": "dev@dev.dev"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4",
+        "phpspec/phpspec": "^2.2@dev"        
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "{{Uvendor}}\\{{Uname}}\\": "src/"
+        },
+        "psr-0": {
+{{spec}}
+        }
+    }
+}

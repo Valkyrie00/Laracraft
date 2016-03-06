@@ -1,6 +1,6 @@
 @extends('laracraft.layouts.master')
 
-@section('title', 'Create MVC')
+@section('title', 'Creative')
 
 @section('content')
 

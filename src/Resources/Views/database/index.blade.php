@@ -20,10 +20,7 @@
         e.preventDefault();
         $Vconsole =  $( "#valkyrie-console-content");
         var actionUpdate = '/laracraft/database/migration';
-        if($Vconsole.attr('vis') =='small'){
-            $Vconsole.animate({height:'+=600'})
-            $Vconsole.attr('vis','big');
-        }
+        $Vconsole.toggleClass('full-height');
 
         $.ajax({
             url: actionUpdate,

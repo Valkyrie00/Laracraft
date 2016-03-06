@@ -46,10 +46,7 @@
         e.preventDefault();
         $Vconsole =  $( "#valkyrie-console-content");
         var actionUpdate = '/laracraft/composer/update';
-        if($Vconsole.attr('vis') =='small'){
-            $Vconsole.animate({height:'+=600'})
-            $Vconsole.attr('vis','big');
-        }
+        $Vconsole.toggleClass('full-height');
 
         $.ajax({
             url: actionUpdate,
@@ -61,13 +58,9 @@
     $(document).on('click', '#commands-composer-install', function (e) {
         e.preventDefault();
         $Vconsole =  $( "#valkyrie-console-content");
-
         var actionInstall = '/laracraft/composer/install';
         var repository = $(this).data("repository");
-        if($Vconsole.attr('vis') =='small'){
-            $Vconsole.animate({height:'+=600'})
-            $Vconsole.attr('vis','big');
-        }
+        $Vconsole.toggleClass('full-height');
 
         $.ajax({
             url: actionInstall,

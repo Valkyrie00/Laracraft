@@ -17,12 +17,20 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+.top-buffer {
+  margin-top:20px;
+}
+
 /*
  * Top navigation
  * Hide default border to remove 1px line.
  */
 .navbar-fixed-top {
   border: 0;
+}
+
+.navbar-inverse {
+    background-color: #353030;
 }
 
 /*
@@ -78,6 +86,7 @@ body {
 
 .main {
   padding: 20px;
+  margin-bottom: 150px;
 }
 @media (min-width: 768px) {
   .main {
@@ -107,4 +116,70 @@ body {
 .placeholder img {
   display: inline-block;
   border-radius: 50%;
+}
+
+
+/*
+ * Log Console
+ */
+
+.valkyrie-console {
+    position: fixed;
+    height: 150px;
+    bottom: 0;
+    background-color: rgba( 0, 0, 0, .9 );
+    color: #5dca42;
+    overflow: hidden;
+    border-top: 5px solid #5dca42;
+
+    transition: height 0.5s;
+}
+
+.valkyrie-console.full-height {
+    height: calc( 100% - 50px );
+}
+
+.valkyrie-console-log-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.valkyrie-console-log {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -20px; /* Decrease this value for cross-browser compatibility */
+    overflow: auto;
+}
+
+.valkyrie-console-action > a{
+    float: right;
+}
+.valkyrie-console-action > a {
+    color: #5DCA42;
+}
+.valkyrie-console-toggler {
+    padding-right: 0.7em;
+    position: relative;
+}
+.valkyrie-console-toggler:after {
+    content: '»';
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    transition: transform 0.5s;
+    -webkit-transition: -webkit-transform 0.5s;
+
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.full-height .valkyrie-console-toggler:after {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
 }

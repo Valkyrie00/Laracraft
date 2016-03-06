@@ -23,7 +23,7 @@ class LaracraftServiceProvider extends ServiceProvider
         include __DIR__.'/routes.php';
 
         $this->publishes([
-            __DIR__.'/Database/migrations' => base_path('database/migrations/laracraft'),
+            __DIR__.'/Database/migrations' => base_path('database/migrations'),
         ]);
 
         $this->publishes([
@@ -53,7 +53,8 @@ class LaracraftServiceProvider extends ServiceProvider
         $this->app->make('Valkyrie\Laracraft\Controllers\DashboardController');
         $this->app->make('Valkyrie\Laracraft\Controllers\BackupController');
         $this->app->make('Valkyrie\Laracraft\Controllers\ComposerController');
-        $this->app->make('Valkyrie\Laracraft\Controllers\MMController');
+        $this->app->make('Valkyrie\Laracraft\Controllers\CreativeController');
+        $this->app->make('Valkyrie\Laracraft\Controllers\PackageController');
     }
 
     /**

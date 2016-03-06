@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 use Valkyrie\Laracraft\Helpers\Helper;
 
 
-class MMController extends Controller
+class CreativeController extends Controller
 {
 
     public function __construct(Helper $helper)
@@ -22,7 +22,7 @@ class MMController extends Controller
 
     public function index()
     {
-        Return View::make('laracraft.mmc.create');
+        Return View::make('laracraft.creative.create');
     }
 
     public function create(Request $request){
@@ -102,7 +102,7 @@ class MMController extends Controller
             $this->helper->generateControllerComponent($data_controller, $generation_modal);
         }
 
-        return Redirect::to("laracraft/mmc")->with('success');
+        return Redirect::to("laracraft/creative")->with('success');
 
     }
 

@@ -2,15 +2,20 @@
 
 Route::get('/laracraft/dashboard',  ['as' => 'laracraft-dashboard', 'uses' => 'Valkyrie\Laracraft\Controllers\DashboardController@index']);
 
-Route::group(['prefix' => 'laracraft/mmc'], function () {
-    Route::get('/',  ['as' => 'laracraft-mmc', 'uses' => 'Valkyrie\Laracraft\Controllers\MMController@index']);
-    Route::post('create',  ['as' => 'laracraft-mmc', 'uses' => 'Valkyrie\Laracraft\Controllers\MMController@create']);
+Route::group(['prefix' => 'laracraft/creative'], function () {
+    Route::get('/',  ['as' => 'laracraft-creative', 'uses' => 'Valkyrie\Laracraft\Controllers\CreativeController@index']);
+    Route::post('create',  ['as' => 'laracraft-creative', 'uses' => 'Valkyrie\Laracraft\Controllers\CreativeController@create']);
 });
 
 Route::group(['prefix' => '/laracraft/composer'], function () {
     Route::get('/',  ['as' => 'laracraft-composer', 'uses' => 'Valkyrie\Laracraft\Controllers\ComposerController@index']);
     Route::get('/update',  ['as' => 'laracraft-composer-update', 'uses' => 'Valkyrie\Laracraft\Controllers\ComposerController@composerUpdate']);
     Route::get('/install/{name?}',  ['as' => 'laracraft-composer-install', 'uses' => 'Valkyrie\Laracraft\Controllers\ComposerController@composerInstall']);
+});
+
+Route::group(['prefix' => 'laracraft/package'], function () {
+    Route::get('/',  ['as' => 'laracraft-package', 'uses' => 'Valkyrie\Laracraft\Controllers\PackageController@index']);
+    Route::post('create',  ['as' => 'laracraft-package', 'uses' => 'Valkyrie\Laracraft\Controllers\PackageController@create']);
 });
 
 Route::group(['prefix' => '/laracraft/database'], function () {
