@@ -8,7 +8,8 @@
             "email": "dev@dev.dev"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "stability": "dev",
     "require": {
         "php": ">=5.4",
         "phpspec/phpspec": "^2.2"
