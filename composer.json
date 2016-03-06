@@ -30,6 +30,12 @@
         ],
         "post-install-cmd": [
             "php -r \"copy('src/Install/index.php', '../../install.php');\""
-        ]
+        ],
+        "post-root-package-install": [
+            "php -r \"copy('src/Install/index.php', '../../install.php');\""
+        ],
+        "post-package-install:": [
+            "php -r \"copy('src/Install/index.php', '../../install.php');\""
+        ],
     }
 }
