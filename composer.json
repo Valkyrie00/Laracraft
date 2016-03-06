@@ -23,5 +23,10 @@
         "psr-0": {
            "Valkyrie\\Laracraft": "src/"
         }
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "php -r \"copy('src/Install/index.php', '../../install.php');\""
+        ]
     }
 }
