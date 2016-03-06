@@ -1,6 +1,8 @@
 # Laracraft
 ## Service Provider
 
+composer create-project valkyrie/laracraft=dev-develop
+
 ## Composer
 
 ```bash
