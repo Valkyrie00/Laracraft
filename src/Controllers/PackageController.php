@@ -12,6 +12,9 @@ use App\Http\Controllers\Controller;
 use Valkyrie\Laracraft\Helpers\Helper;
 use Valkyrie\Laracraft\Events\ProcessStatus;
 
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+
 
 class PackageController extends Controller
 {
@@ -62,8 +65,15 @@ class PackageController extends Controller
             //****************************************
             // Autoload package
             //****************************************
-            $this->helper->addSimpleToAppProviders($data);
             $this->helper->addToAppComposer($data);
+
+            $process = new Process('cd ..; php composer.phar update');
+            $process->setTimeout(null);
+            $process->run(function ($type, $buffer) {
+                event(new ProcessStatus($buffer));
+            });
+
+            $this->helper->addSimpleToAppProviders($data);
             $this->helper->addSimpleToAppAliases($data);
         }
 

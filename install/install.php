@@ -174,11 +174,10 @@
                     { code: 'vendorPredis', label: 'Add Predis' },
                     { code: 'addProvider', label: 'Add provider' },
                     { code: 'createEnv', label: 'Generate Env' },
-                    { code: 'createKey', label: 'Generate application key' },
                     { code: 'composerDump', label: 'Composer dump-autoload' },
                     { code: 'vendorPublish', label: 'Vendor publish' },
                     { code: 'npmInstall', label: 'Npm install' },
-                    { code: 'initServe', label: 'Run Serve' }
+                    { code: 'createKey', label: 'Generate application key' }
                 ]
                 /*
                  * Final Pages
