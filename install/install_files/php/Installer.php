@@ -800,7 +800,8 @@ class Installer
     private function prepareServerRequest($uri, $params = array())
     {
         $params['url'] = base64_encode($this->getBaseUrl());
-        $curl = curl_init('https://codeload.github.com/laravel/laravel/zip/master');
+        $curl = curl_init('https://codeload.github.com/laravel/laravel/zip/5.1');
+        //$curl = curl_init('https://codeload.github.com/laravel/laravel/zip/master');
         return $curl;
     }
 

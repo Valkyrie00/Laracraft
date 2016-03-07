@@ -169,7 +169,7 @@
                     { code: 'getMetaData', label: 'Requesting package information' },
                     { code: 'downloadCore', label: 'Downloading application files' },
                     { code: 'extractCore', label: 'Unpacking application files' },
-                    { code: 'initComposer', label: 'Lancio Composer' },
+                    { code: 'initComposer', label: 'Composer' },
                     { code: 'integrateLaracraft', label: 'Add Laracraft' },
                     { code: 'vendorPredis', label: 'Add Predis' },
                     { code: 'addProvider', label: 'Add provider' },
