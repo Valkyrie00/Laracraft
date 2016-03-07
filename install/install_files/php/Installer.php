@@ -286,6 +286,26 @@ class Installer
                 $this->initComposerDetails();
                 break;
 
+            case 'integrateLaracraft':
+                $this->integrateLaracraftDetails();
+                break;
+
+            case 'addProvider':
+                $this->addToAppProviders();
+                break;
+
+            case 'initServe':
+                $this->initServeDetails();
+                break;
+
+            case 'composerDump':
+                $this->composerDumpDetails();
+                break;
+
+            case 'vendorPublish':
+                $this->vendorPublishDetails();
+                break;
+
             case 'finishInstall':
                 $this->setCoreBuild();
                 $this->moveHtaccess(null, 'installer');
@@ -308,6 +328,45 @@ class Installer
           $output = shell_exec($cmd);
     }
 
+    private function integrateLaracraftDetails()
+    {
+          $cmd = 'cd ..; cd ..; composer require valkyrie/laracraft dev-develop';
+          $output = shell_exec($cmd);
+    }
+
+    private function addToAppProviders()
+    {
+        $provider = "        Valkyrie\\Laracraft\\LaracraftServiceProvider::class,";
+        $search = "'providers' => [";
+        $replace = $search."\n".$provider;
+
+        $config_app = file_get_contents('../../config/app.php');
+        $new_provider  = str_replace($search, $replace, $config_app);
+        $new_config_app = file_put_contents('../../config/app.php', $new_provider);
+    }
+
+    private function initServeDetails()
+    {
+        $serve_path = substr(getcwd(), 0, -17).'public';
+        //$cmd = ' sudo sh /vagrant/scripts/serve.sh '.$_SERVER["HTTP_HOST"].' '.$serve_path;
+
+        $cmd = 'cd  /vagrant/scripts/; sudo sh ./serve.sh '.$_SERVER["HTTP_HOST"].' '.$serve_path;
+        $output = exec($cmd);
+        print_r($output);
+    }
+
+    private function composerDumpDetails()
+    {
+        $cmd = 'cd ..; cd ..; composer dump-autoload';
+        $output = shell_exec($cmd);
+    }
+
+    private function vendorPublishDetails()
+    {
+        $cmd = 'cd ..; cd ..; php artisan vendor:publish';
+        $output = shell_exec($cmd);
+    }
+
     private function buildConfigFile()
     {
         $this->bootFramework();
@@ -320,7 +379,7 @@ class Installer
 
         $activeTheme = $this->post('active_theme');
         if ($activeTheme) {
-            $activeTheme = strtolower(str_replace('.', '-', $activeTheme));
+            $activeTheme = strtolower(st1r_replace('.', '-', $activeTheme));
         }
         else {
             $activeTheme = 'demo';

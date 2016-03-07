@@ -88,7 +88,6 @@ input.lock-input {
 
 #wrap:before {
     content: ' ';
-    background: #ecf0f1 url('../images/skyline.png') repeat-x left bottom;
     position: absolute;
     bottom: -225px;
     width: 100%;
@@ -99,20 +98,17 @@ input.lock-input {
 header {
     padding: 40px 0 0;
     top: 0;
-    background: #162430 url('../images/stars.png');
+    background-color: #101010;
     width: 100%;
     z-index: 2;
 }
 
 header h1 {
-    margin: 0 0 30px 0;
     display: block;
     height: 47px;
     width: 283px;
-    background: transparent url('../images/logo.png') no-repeat left -90px;
     line-height: 0;
-    text-indent: -9999px;
-    overflow: hidden;
+    color: #fff;
 }
 header .progress-bar-container {
     margin-top: 10px;
@@ -137,7 +133,6 @@ section.title:before {
     height: 63px;
     left: 0;
     bottom: 0;
-    background: url('../images/clouds.png') repeat-x left top;
 }
 
 section.title .steps {
@@ -164,8 +159,8 @@ section.title .steps p {
 }
 section.title .steps .pass p {
     opacity: 1;
-    background: #d35400;
-    border-color: #d35400;
+    background: #5DCA42;
+    border-color: #5DCA42;
 }
 section.title .steps .pass.last p {
     opacity: .4;
@@ -250,7 +245,6 @@ section.body p.lead.with-tick:before {
     display: block;
     left: 0;
     top: 0;
-    background: transparent url('../images/clouds-content.gif') repeat-x left bottom;
 }
 .cloud-content .cp-button {
     position: absolute;
@@ -264,7 +258,7 @@ section.body p.lead.with-tick:before {
 }
 .side-nav h3 {
     text-transform: uppercase;
-    color: #C03F31;
+    color: #5DCA42;
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 10px;
@@ -322,7 +316,6 @@ section.body p.lead.with-tick:before {
 }
 
 footer {
-    background: transparent url('../images/grass.png') repeat-x left bottom;
     height: 100px;
     z-index: 10;
     position: relative;
@@ -340,7 +333,6 @@ footer .container:after {
     bottom: 0;
     width: 207px;
     height: 127px;
-    background: transparent url('../images/tree.png') repeat-x left bottom;
     z-index: 7;
 }
 

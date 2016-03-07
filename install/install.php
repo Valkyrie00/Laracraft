@@ -170,6 +170,11 @@
                     { code: 'downloadCore', label: 'Downloading application files' },
                     { code: 'extractCore', label: 'Unpacking application files' },
                     { code: 'initComposer', label: 'Lancio Composer' },
+                    { code: 'integrateLaracraft', label: 'Add Laracraft' },
+                    { code: 'addProvider', label: 'Add provider' },
+                    { code: 'composerDump', label: 'Composer dump-autoload' },
+                    { code: 'vendorPublish', label: 'Vendor publish' },
+                    { code: 'initServe', label: 'Run Serve' }
                 ]
                 /*
                  * Final Pages
