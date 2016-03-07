@@ -35,7 +35,7 @@ class LaracraftServiceProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            __DIR__.'/Node/socket.js' => base_path('socket.js'),
+            __DIR__.'/Node/laracraft.js' => base_path('laracraft.js'),
         ]);
 
         $this->publishes([

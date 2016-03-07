@@ -306,6 +306,26 @@ class Installer
                 $this->vendorPublishDetails();
                 break;
 
+            case 'vendorPredis':
+                $this->vendorPredisDetails();
+                break;
+
+            case 'npmInstall':
+                $this->npmInstallDetails();
+                break;
+
+            case 'createEnv':
+                $this->createEnvDetails();
+                break;
+
+            case 'createKey':
+                $this->createKeyDetails();
+                break;
+
+            case 'runNode':
+                $this->runNodeDetails();
+                break;
+
             case 'finishInstall':
                 $this->setCoreBuild();
                 $this->moveHtaccess(null, 'installer');
@@ -364,6 +384,37 @@ class Installer
     private function vendorPublishDetails()
     {
         $cmd = 'cd ..; cd ..; php artisan vendor:publish';
+        $output = shell_exec($cmd);
+    }
+
+    private function vendorPredisDetails()
+    {
+        $cmd = 'cd ..; cd ..; composer require predis/predis';
+        $output = shell_exec($cmd);
+    }
+
+    private function npmInstallDetails()
+    {
+        $cmd = 'cd ..; cd ..; npm install socket.io ioredis --save';
+        $output = shell_exec($cmd);
+    }
+
+    private function createEnvDetails()
+    {
+        $env = file_get_contents('../../.env.example');
+        $env .= "BROADCAST_DRIVER=redis";
+        $new_env = file_put_contents('../../.env', $env);
+    }
+
+    private function runNodeDetails()
+    {
+        $cmd = 'cd ..; cd ..; node socket.js';
+        $output = shell_exec($cmd);
+    }
+
+    private function createKeyDetails()
+    {
+        $cmd = 'cd ..; cd ..; php artisan key:generate';
         $output = shell_exec($cmd);
     }
 

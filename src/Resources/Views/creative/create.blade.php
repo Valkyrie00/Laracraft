@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <form action="{{ URL::to('laracraft/mmc/create') }}" method="POST">
+    <form action="{{ URL::to('laracraft/creative/create') }}" method="POST">
 
     <div class="row">
         <h3 class="sub-header">Migration</h3>
