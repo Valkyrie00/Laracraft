@@ -10,12 +10,9 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.4",
-        "phpspec/phpspec": "^2.2"
+        "php": ">=5.4"
     },
-    "require-dev": {
-        "phpunit/phpunit": "*"
-    },
+    "require-dev": {},
     "autoload": {
         "psr-4": {
             "Valkyrie\\Laracraft\\": "src/"
