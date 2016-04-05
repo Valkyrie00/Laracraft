@@ -7,6 +7,7 @@ use File;
 use Input;
 use Illuminate\Http\Request;
 use Redirect;
+use Session;
 
 use App\Http\Controllers\Controller;
 use Valkyrie\Laracraft\Helpers\Helper;
@@ -102,8 +103,7 @@ class CreativeController extends Controller
             $this->helper->generateControllerComponent($data_controller, $generation_modal);
         }
 
-        return Redirect::to("laracraft/creative")->with('success');
-
+        return Redirect::to("laracraft/creative")->with('success', true);
     }
 
 }

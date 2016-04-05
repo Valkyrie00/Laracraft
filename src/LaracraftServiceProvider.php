@@ -20,6 +20,7 @@ class LaracraftServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         include __DIR__.'/routes.php';
 
         $this->publishes([
@@ -55,6 +56,9 @@ class LaracraftServiceProvider extends ServiceProvider
         $this->app->make('Valkyrie\Laracraft\Controllers\ComposerController');
         $this->app->make('Valkyrie\Laracraft\Controllers\CreativeController');
         $this->app->make('Valkyrie\Laracraft\Controllers\PackageController');
+        $this->app->make('Valkyrie\Laracraft\Controllers\RouteController');
+        $this->app->make('Valkyrie\Laracraft\Controllers\ConfigController');
+        $this->app->make('Valkyrie\Laracraft\Controllers\Base\ControllerController');
     }
 
     /**

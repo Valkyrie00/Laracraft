@@ -3,40 +3,76 @@
 @section('title', 'Composer')
 
 @section('content')
-<div class="row">
-    <h3 class="sub-header">Composer update</h3>
-    <div id="commands-composer-update">
-        <a href="#" class="btn btn-primary">Update Now!</a>
-    </div>
-    <div id="output">
-    </div>
-</div>
+<section class="content-header">
+    <h1 class="sub-header">Composer</h1>
+    <ol class="breadcrumb">
+        <li>Tools</li>
+        <li class="active">Composer</li>
+    </ol>
+</section>
 
-<div class="row">
-    <h3 class="sub-header">Install Package</h3>
-    <form class="form-inline" id="search-form">
-      <div class="form-group">
-        <label>Search: </label>
-        <input type="text" class="form-control" id="packages_search" placeholder="Package Name">
-      </div>
-    </form>
-</div>
+<!-- Main content -->
+<section class="content">
 
-<div class="row">
-    <table class="table table-striped" id="package-list">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Download</th>
-            <th>Stars</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-</div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <strong>Composer Actions</strong>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <div id="commands-composer-update">
+                            <a href="#" class="btn btn-primary">Update Now!</a>
+                        </div>
+                        <div id="output">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <strong>Install Packages</strong>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <form class="form-inline" id="search-form">
+                          <div class="form-group">
+                            <label>Search: </label>
+                            <input type="text" class="form-control" id="packages_search" placeholder="Package Name">
+                          </div>
+                        </form>
+
+                        <table class="table table-striped" id="package-list">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Download</th>
+                                <th>Stars</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
 @endsection
 
 
@@ -85,11 +121,11 @@
         newRowsContent = '';
         $.each(data['results'], function( index, value ) {
             newRowsContent += "<tr>";
-                newRowsContent += "<td><strong>"+value['name']+"</strong></td>";
-                newRowsContent += "<td>"+value['description']+"</td>";
-                newRowsContent += "<td>"+value['downloads']+"</td>";
-                newRowsContent += "<td>"+value['favers']+"</td>";
-                newRowsContent += "<td><a class='btn btn-primary' href="+value['url']+" target='_blank'>Details</a> ";
+                newRowsContent += "<td class='col-md-3'><strong>"+value['name']+"</strong></td>";
+                newRowsContent += "<td class='col-md-5'>"+value['description']+"</td>";
+                newRowsContent += "<td class='col-md-1'>"+value['downloads']+"</td>";
+                newRowsContent += "<td class='col-md-1'>"+value['favers']+"</td>";
+                newRowsContent += "<td class='col-md-3'><a class='btn btn-primary' href="+value['url']+" target='_blank'>Details</a> ";
                 newRowsContent += "<a id='commands-composer-install' class='btn btn-success' href='#' data-repository='"+value['name']+"'>Install</a></td>";
             newRowsContent += "</tr>";
         });

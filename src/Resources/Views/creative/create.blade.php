@@ -4,77 +4,146 @@
 
 @section('content')
 
+<section class="content-header">
+    <h1 class="sub-header">Creative</h1>
+    <ol class="breadcrumb">
+        <li>Tools</li>
+        <li class="active">Creative</li>
+    </ol>
+
+    <div class="alert alert-info" role="alert">
+      <strong>Heads up!</strong> ....
+    </div>
+</section>
+
+<!-- Main content -->
+<section class="content">
     <form action="{{ URL::to('laracraft/creative/create') }}" method="POST">
 
     <div class="row">
-        <h3 class="sub-header">Migration</h3>
-        <div class="form-group form-inline">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                       <strong>Migration</strong>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
 
-            <label>Table Name:</label>
-            <input type="text" value="" class="form-control" name="migration[table_name]" id="table_name" placeholder="Table Name">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Table Name</th>
+                                <th>Migration Name</th>
+                                <th>Destination</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-3"><input type="text" value="" class="form-control" name="migration[table_name]" id="table_name" placeholder="Table Name"></td>
+                                    <td class="col-md-3"><input type="text" value="" class="form-control" name="migration[migration_name]" id="migration_name" placeholder="Migration Name"></td>
+                                    <td class="col-md-6">database/migrations/{{ date('Y_m_d_his') }}_create_<strong><span id="migration_name_replace">MIGRATION-NAME</span></strong>_table.php</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-            <label> Migration Name:</label>
-            <input type="text" value="" class="form-control" name="migration[migration_name]" id="migration_name" placeholder="Migration Name">
+                        <div class="input_fields_wrap">
+                           <button class="add_field_button btn btn-primary pull-right">Add Column</button>
+                        </div>
 
-            <label> Destination:</label>
-            <span>"database/migrations/{{ date('Y_m_d_his') }}_create_<strong><span id="migration_name_replace">MIGRATION-NAME</span></strong>_table.php"</span>
+                        <table class="table table-striped" id="column-list">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>DataType</th>
+                                <th>Unsigned</th>
+                                <th>Nullable</th>
+                                <th>Default</th>
+                                <th>Actions</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="add_column"></div>
 
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="input_fields_wrap">
-           <button class="add_field_button btn btn-primary pull-right">Add Column</button>
-        </div>
-
-        <table class="table table-striped" id="column-list">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>DataType</th>
-                <th>Unsigned</th>
-                <th>Nullable</th>
-                <th>Default</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <div class="add_column"></div>
     </div>
 
-    <div class="row top-buffer">
-        <h3 class="sub-header">Model</h3>
-        <div class="form-group form-inline">
-            <label>Model Name:</label>
-            <input type="text" value="" class="form-control" name="model[model_name]" id="model_name" placeholder="Model Name">
-
-            <label>Model Table:</label>
-            <input type="text" value="" class="form-control" name="model[model_table]" id="model_table" placeholder="Model Table">
-
-            <label> Destination:</label>
-            <span>"app/<strong><span id="model_name_replace">MODEL-NAME</span></strong>.php"</span>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <strong>Model</strong>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Model Name</th>
+                                <th>Model Table</th>
+                                <th>Destination</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-3"><input type="text" value="" class="form-control" name="model[model_name]" id="model_name" placeholder="Model Name"></td>
+                                    <td class="col-md-3"><input type="text" value="" class="form-control" name="model[model_table]" id="model_table" placeholder="Model Table"></td>
+                                    <td class="col-md-6">app/<strong><span id="model_name_replace">MODEL-NAME</span></strong>.php</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="row top-buffer">
-        <h3 class="sub-header">Controller</h3>
-        <div class="form-group form-inline">
-            <label>Controller Name:</label>
-            <input type="text" value="" class="form-control" name="controller[controller_name]" id="controller_name" placeholder="Controller Name">
-
-            <label> Destination:</label>
-            <span>"app/Http/Controllers/<strong><span id="controller_name_replace">CONTROLLER-NAME</span></strong>Controller.php"</span>
-
-
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <strong>Controller</strong>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Controller Name</th>
+                                <th>Crud</th>
+                                <th>Destination</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-3"><input type="text" value="" class="form-control" name="controller[controller_name]" id="controller_name" placeholder="Controller Name"></td>
+                                    <td class="col-md-3"><input type="checkbox" name="controller[crud]" value="true"></td>
+                                    <td class="col-md-6">app/Http/Controllers/<strong><span id="controller_name_replace">CONTROLLER-NAME</span></strong>Controller.php</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-        <label> Crud:</label>
-        <input type="checkbox" name="controller[crud]" value="true">
     </div>
 
-
-    <div class="row top-buffer">
+    <div class="row">
         <button type="submit" class="btn btn-success pull-right">Create!</button>
     </div>
     </form>
+
+</section>
 @endsection
 
 
@@ -129,6 +198,15 @@
     $("#controller_name").keyup(function() {
         $("#controller_name_replace").text( this.value );
     });
+
 </script>
+
+
+@if(Session::has('success'))
+
+  <script type="text/javascript">
+    $.notify({ message: " I am using an image." },{ type: 'success' });
+  </script>
+@endif
 
 @endsection

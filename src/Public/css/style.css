@@ -21,6 +21,26 @@ body {
   margin-top:20px;
 }
 
+.graph1 {
+    height: 300px;
+}
+
+.panel-primary {
+    border: none;
+}
+
+.panel-primary>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border: none;
+}
+
+.alert-success {
+    color: #fff;
+    background-color: #5DCA42;
+    border-color: #5DCA42;
+}
+
 /*
  * Top navigation
  * Hide default border to remove 1px line.
@@ -78,6 +98,19 @@ body {
 .navbar-inverse .navbar-brand {
     color: #FFFFFF;
   }
+
+.navbar-right {
+    padding: 15px 15px;
+}
+
+.nav-sidebar .livicon {
+    float: left;
+    margin-top: -2px;
+    margin-right: 10px;
+}
+.nav-sidebar li a i {
+    padding-top: 2px;
+}
 
 
 /*
