@@ -297,7 +297,14 @@ Class Helper {
     }
 
 
+    public function generateRoute()
+    {
 
+        $routes_path = app_path().'/Http/routes.php';
+        $this->replaceAndConcatenate(__DIR__.'/../StructureModules/'.$structure_modal.'/routes.stub', $data_search, $data_replace, $routes_path);
+
+        return true;
+    }
 
 
 

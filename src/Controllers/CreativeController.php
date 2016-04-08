@@ -103,7 +103,7 @@ class CreativeController extends Controller
             $this->helper->generateControllerComponent($data_controller, $generation_modal);
         }
 
-        return Redirect::to("laracraft/creative")->with('success', true);
+        return back()->with('success', true);
     }
 
 }

@@ -58,7 +58,11 @@ class LaracraftServiceProvider extends ServiceProvider
         $this->app->make('Valkyrie\Laracraft\Controllers\PackageController');
         $this->app->make('Valkyrie\Laracraft\Controllers\RouteController');
         $this->app->make('Valkyrie\Laracraft\Controllers\ConfigController');
+
         $this->app->make('Valkyrie\Laracraft\Controllers\Base\ControllerController');
+        $this->app->make('Valkyrie\Laracraft\Controllers\Base\ModelController');
+        $this->app->make('Valkyrie\Laracraft\Controllers\Base\MigrationController');
+        $this->app->make('Valkyrie\Laracraft\Controllers\Base\RouteController');
     }
 
     /**

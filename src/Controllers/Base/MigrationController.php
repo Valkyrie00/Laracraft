@@ -17,7 +17,7 @@ use Valkyrie\Laracraft\Helpers\Helper;
 
 
 
-class ControllerController extends Controller
+class MigrationController extends Controller
 {
 
     public function __construct(Helper $helper)
@@ -32,17 +32,9 @@ class ControllerController extends Controller
         /*
             http://php.net/manual/en/class.splfileinfo.php
         */
-        $controllers = File::allFiles(app_path().'/Http/Controllers');
-        //dd($controllers);
-        return View::make('laracraft.base.controller.index')->with('controllers', $controllers);
-    }
+        $migrations = File::allFiles(base_path().'/database/migrations');
 
-    public function save(Request $request)
-    {
-        $file       = $this->file->get('/home/vagrant/laracraft/app/Http/Controllers/IgenicoController.php');
-        $this->file->put('/home/vagrant/laracraft/app/Http/Controllers/IgenicoController.php', $request->input('contents'));
-
-        return 'ciao';
+        return View::make('laracraft.base.migration.index')->with('migrations', $migrations);
     }
 
 }

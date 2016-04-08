@@ -58,10 +58,13 @@ class ConfigController extends Controller
             $this->file->put(base_path().'/.env', $replacing);
         }
 
-        foreach ($request->input('new') as $key => $value) {
-            $add  = $value['name']."=".$value['value']."\n";
-            $this->file->append(base_path().'/.env', $add);
+        if($request->input('new')) {
+            foreach ($request->input('new') as $key => $value) {
+                $add  = $value['name']."=".$value['value']."\n";
+                $this->file->append(base_path().'/.env', $add);
+            }
         }
+        
 
         return redirect('/laracraft/config/env');
     }

@@ -8,6 +8,11 @@ Route::get('/laracraft/server/start',  ['as' => 'laracraft-dashboard', 'uses' =>
 Route::group(['prefix' => '/laracraft/base'], function () {
     Route::get('controller',    ['as' => 'laracraft-base-controller', 'uses' => 'Valkyrie\Laracraft\Controllers\Base\ControllerController@index']);
     Route::post('controller',   ['as' => 'laracraft-base-controller', 'uses' => 'Valkyrie\Laracraft\Controllers\Base\ControllerController@save']);
+
+    Route::get('model',         ['as' => 'laracraft-base-model',     'uses' => 'Valkyrie\Laracraft\Controllers\Base\ModelController@index']);
+    Route::get('migration',     ['as' => 'laracraft-base-migration', 'uses' => 'Valkyrie\Laracraft\Controllers\Base\MigrationController@index']);
+
+    Route::get('route',         ['as' => 'laracraft-base-route', 'uses' => 'Valkyrie\Laracraft\Controllers\Base\RouteController@index']);
 });
 
 
@@ -53,3 +58,7 @@ Route::group(['prefix' => '/laracraft/backups'], function () {
     Route::post('/store',   ['as' => 'laracraft-backups',         'uses' => 'Valkyrie\Laracraft\Controllers\BackupController@store']);
     Route::get('/download/{backupsId}',   ['as' => 'download-bacup',         'uses' => 'Valkyrie\Laracraft\Controllers\BackupController@downloadBackup']);
 });
+
+
+//Request data
+Route::get('/laracraft/code/getmethods', ['uses' => 'Valkyrie\Laracraft\Controllers\Base\RouteController@getMethods']);

@@ -17,7 +17,7 @@ use Valkyrie\Laracraft\Helpers\Helper;
 
 
 
-class ControllerController extends Controller
+class ModelController extends Controller
 {
 
     public function __construct(Helper $helper)
@@ -32,17 +32,12 @@ class ControllerController extends Controller
         /*
             http://php.net/manual/en/class.splfileinfo.php
         */
-        $controllers = File::allFiles(app_path().'/Http/Controllers');
-        //dd($controllers);
-        return View::make('laracraft.base.controller.index')->with('controllers', $controllers);
-    }
-
-    public function save(Request $request)
-    {
-        $file       = $this->file->get('/home/vagrant/laracraft/app/Http/Controllers/IgenicoController.php');
-        $this->file->put('/home/vagrant/laracraft/app/Http/Controllers/IgenicoController.php', $request->input('contents'));
-
-        return 'ciao';
+        $models = [];
+        $fModels = File::files(app_path());
+        foreach ($fModels as $fModel) {
+            $models[] = new \SplFileInfo($fModel);
+        }
+        return View::make('laracraft.base.model.index')->with('models', $models);
     }
 
 }
