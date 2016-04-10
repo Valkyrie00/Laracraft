@@ -45,24 +45,24 @@
                 <i class="livicon" data-name="lab" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Creative
               </a>
             </li>
-            <li class="{{ Route::current()->getName() == 'laracraft-routes' ? 'active' : '' }}">
-              <a href="{{ URL::to('laracraft/routes') }}">
-                <i class="livicon" data-name="globe" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Controller TODO
+            <li class="{{ Route::current()->getName() == 'laracraft-base-controller' ? 'active' : '' }}">
+              <a href="{{ URL::to('laracraft/base/controller') }}">
+                <i class="livicon" data-name="globe" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Controller
               </a>
             </li>
-            <li class="{{ Route::current()->getName() == 'laracraft-routes' ? 'active' : '' }}">
-              <a href="{{ URL::to('laracraft/routes') }}">
-                <i class="livicon" data-name="globe" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Model TODO
+            <li class="{{ Route::current()->getName() == 'laracraft-base-model' ? 'active' : '' }}">
+              <a href="{{ URL::to('laracraft/base/model') }}">
+                <i class="livicon" data-name="globe" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Model
               </a>
             </li>
-            <li class="{{ Route::current()->getName() == 'laracraft-routes' ? 'active' : '' }}">
-              <a href="{{ URL::to('laracraft/routes') }}">
-                <i class="livicon" data-name="globe" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Migration TODO
+            <li class="{{ Route::current()->getName() == 'laracraft-base-migration' ? 'active' : '' }}">
+              <a href="{{ URL::to('laracraft/base/migration') }}">
+                <i class="livicon" data-name="globe" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Migration
               </a>
             </li>
-            <li class="{{ Route::current()->getName() == 'laracraft-routes' ? 'active' : '' }}">
-              <a href="{{ URL::to('laracraft/routes') }}">
-                <i class="livicon" data-name="globe" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Routes TODO
+            <li class="{{ Route::current()->getName() == 'laracraft-base-route' ? 'active' : '' }}">
+              <a href="{{ URL::to('laracraft/base/route') }}">
+                <i class="livicon" data-name="globe" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Route TODO
               </a>
             </li>
           </ul>
