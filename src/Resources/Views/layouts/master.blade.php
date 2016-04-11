@@ -60,11 +60,11 @@
                 <i class="livicon" data-name="globe" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Migration
               </a>
             </li>
-            <li class="{{ Route::current()->getName() == 'laracraft-base-route' ? 'active' : '' }}">
+            <!-- <li class="{{ Route::current()->getName() == 'laracraft-base-route' ? 'active' : '' }}">
               <a href="{{ URL::to('laracraft/base/route') }}">
                 <i class="livicon" data-name="globe" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Route TODO
               </a>
-            </li>
+            </li> -->
           </ul>
 
           <h3 class="sub-header">Tools</h3>
@@ -104,7 +104,7 @@
                 <i class="livicon" data-name="wrench" data-size="18" data-c="#353030" data-hc="#353030" data-loop="true"></i> Environment
               </a>
             </li>
-            <li class="{{ Route::current()->getName() == 'laracraft-config-app' ? 'active' : '' }}"><a href="{{ URL::to('laracraft/config/env') }}">App TODO</a></li>
+            <!-- <li class="{{ Route::current()->getName() == 'laracraft-config-app' ? 'active' : '' }}"><a href="{{ URL::to('laracraft/config/env') }}">App TODO</a></li> -->
           </ul>
 
           <h3 class="sub-header">Help</h3>

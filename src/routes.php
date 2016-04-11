@@ -4,7 +4,6 @@ Route::get('/laracraft/dashboard',  ['as' => 'laracraft-dashboard', 'uses' => 'V
 
 Route::get('/laracraft/server/start',  ['as' => 'laracraft-dashboard', 'uses' => 'Valkyrie\Laracraft\Controllers\LaracraftController@startServer']);
 
-
 Route::group(['prefix' => '/laracraft/base'], function () {
     Route::get('controller',    ['as' => 'laracraft-base-controller', 'uses' => 'Valkyrie\Laracraft\Controllers\Base\ControllerController@index']);
     Route::post('controller',   ['as' => 'laracraft-base-controller', 'uses' => 'Valkyrie\Laracraft\Controllers\Base\ControllerController@save']);
@@ -15,11 +14,12 @@ Route::group(['prefix' => '/laracraft/base'], function () {
     Route::get('route',         ['as' => 'laracraft-base-route', 'uses' => 'Valkyrie\Laracraft\Controllers\Base\RouteController@index']);
 });
 
-
 Route::group(['prefix' => 'laracraft/creative'], function () {
     Route::get('/',  ['as' => 'laracraft-creative', 'uses' => 'Valkyrie\Laracraft\Controllers\CreativeController@index']);
     Route::post('create',  ['as' => 'laracraft-creative', 'uses' => 'Valkyrie\Laracraft\Controllers\CreativeController@create']);
+    Route::post('crud/generate',  ['as' => 'laracraft-crud-generate', 'uses' => 'Valkyrie\Laracraft\Controllers\CreativeController@crudGenerator']);
 });
+
 
 Route::group(['prefix' => '/laracraft/composer'], function () {
     Route::get('/',  ['as' => 'laracraft-composer', 'uses' => 'Valkyrie\Laracraft\Controllers\ComposerController@index']);

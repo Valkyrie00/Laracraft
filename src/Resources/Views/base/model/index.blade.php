@@ -27,7 +27,7 @@
 <section class="content">
 
     <form action="{{ URL::to('laracraft/creative/create') }}" method="POST">
-
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-primary">
@@ -119,7 +119,7 @@
 
 @if(Session::has('success'))
   <script type="text/javascript">
-    $.notify({ message: " I am using an image." },{ type: 'success' });
+    $.notify({ message: "Operation Successful!" },{ type: 'success' });
   </script>
 @endif
 
